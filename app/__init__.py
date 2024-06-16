@@ -17,7 +17,7 @@ app.config['SECRET_KEY'] = os.environ.get("SECRET_KEY")
 
 
 #load database URI from environment variable
-app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('BD_URI')
+app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DB_URI')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
