@@ -8,7 +8,7 @@ mydb = mysql.connector.connect(
 
 my_cursor = mydb.cursor()
 
-my_cursor.execute("CREATE DATABASE eventify")
+my_cursor.execute("CREATE DATABASE eventifycollins")
 
 my_cursor.execute("SHOW DATABASES")
 for db in my_cursor:
