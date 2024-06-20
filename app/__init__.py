@@ -3,10 +3,12 @@ from config import Config
 from flask_sqlalchemy import SQLAlchemy
 from dotenv import load_dotenv
 import os
+from flask_login import LoginManager
 
 app = Flask(__name__)
 app.config.from_object(Config)
-
+login_manager = LoginManager(app)
+login_manager.login_view = 'login_page'
 
 # Explicitly load the .env file from the app directory
 env_path = os.path.join(os.path.dirname(__file__), '.env')
@@ -36,3 +38,4 @@ db = SQLAlchemy(app)
 from app.routes.root import *
 from app.routes.admin import *
 from app.models.user import *
+from app.models.admin import *
