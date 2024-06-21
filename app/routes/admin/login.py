@@ -1,6 +1,6 @@
 from app import app, db, login_manager
 from flask import render_template, request, redirect, url_for, flash
-from flask_login import login_user
+from flask_login import login_user, login_required, logout_user
 from app.models.admin import Admin
 
 @login_manager.user_loader
@@ -41,3 +41,10 @@ def login_page():
         
 
     return render_template('admin/login.html')
+
+@app.route('/logout')
+@login_required
+def logout():
+    logout_user()
+    flash('you have been logged out')
+    return redirect(url_for('login_page'))
