@@ -1,4 +1,5 @@
 from app import db
+import random, string
 
 class Registration(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -13,6 +14,18 @@ class Registration(db.Model):
     event_venue = db.Column(db.String(100), nullable=False)
     eligibility = db.Column(db.String(100), nullable=False)
     event_date = db.Column(db.Date, nullable=False)
+    unique_code = db.Column(db.String(4), unique=True, nullable=False)
+
+
+    def __init__(self, *args, **kwargs):
+        super(Registration, self).__init__(*args, **kwargs)
+        self.generate_unique_code()
+
+    def generate_unique_code(self):
+        #generate a 4 digit code
+        code = ''.join(random.choice(string.digits, k=4))
+
+        self.unique_code = code
 
 
      
