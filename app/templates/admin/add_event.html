@@ -2,7 +2,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Eventify Admin - edit event</title>
+    <title>Eventify Admin - Add event</title>
     <meta name="description" content="Eventify - Admin">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -79,7 +79,7 @@
                     </li>
 
                     <li>
-                        <a href="{{ url_for('edit_event') }}"> <i class="menu-icon ti-email"></i> Edit Events </a>
+                        <a href="{{url_for('edit_event') }}"> <i class="menu-icon ti-email"></i> Edit Events </a>
                     </li>
                  
 
@@ -201,41 +201,24 @@
         </header>
         <!-- /#header -->
 
-
         <form method="post">
-            <div class="col-lg-12">
-                <div class="card">
-                    <div class="card-header"><strong>Edit Event Details</strong><small> Form</small></div>
-                    <div class="form-group">
-                                <label for="event_name" class="form-control-label">Event Name</label>
-                                <input type="text" id="event_name" name="event_name" placeholder="Enter event name" class="form-control" required value="{{ existing_event.event_name }}">
-                            </div>
-                            <div class="form-group">
-                                <label for="event_date" class="form-control-label">Event Date</label>
-                                <input type="date" id="event_date" name="event_date" class="form-control" required value="{{ existing_event.event_date.strftime('%Y-%m-%d') }}">
-                            </div>
-                            <div class="form-group">
-                                <label for="event_venue" class="form-control-label">Event Venue</label>
-                                <input type="text" id="event_venue" name="event_venue" placeholder="Enter event venue" class="form-control" required value="{{ existing_event.event_venue }}">
-                            </div>
-                            <div class="form-group">
-                                <label for="eligibility" class="form-control-label">Eligibility</label>
-                                <input type="text" id="eligibility" name="eligibility" placeholder="Enter eligibility criteria" class="form-control" required value="{{ existing_event.eligibility }}">
-                            </div>
-                          
-                            <div class="form-group">
-                                <label for="total_tickets" class="form-control-label">Total Tickets</label>
-                                <input type="number" id="total_tickets" name="total_tickets" placeholder="Enter total tickets" class="form-control" required value="{{ existing_event.total_tickets }}">
-                            </div>
-                
-                            <!-- Your existing submit button -->
-                
-                            <button type="submit" class="login-btn">Save Event</button>
-                        </div>
-                    </div>
-                </form>
-                
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-header"><strong>Add Events</strong><small> Form</small></div>
+            <div class="form-group"><label for="event_name" class="form-control-label">Event Name</label><input type="text" id="event_name" name="event_name" placeholder="Enter event name" class="form-control" required></div>
+            <div class="form-group"><label for="event_date" class="form-control-label">Event Date</label><input type="date" id="event_date" name="event_date" class="form-control" required></div>
+            <div class="form-group"><label for="event_venue" class="form-control-label">Event Venue</label><input type="text" id="event_venue" name="event_venue" placeholder="Enter event venue" class="form-control" required></div>
+            <div class="form-group"><label for="eligibility" class="form-control-label">Eligibility</label><input type="text" id="eligibility" name="eligibility" placeholder="Enter eligibility criteria" class="form-control" required></div>
+            <div class="form-group"><label for="total_tickets" class="form-control-label">Total Tickets</label><input type="number" id="total_tickets" name="total_tickets" placeholder="Enter total tickets" class="form-control" required></div>
+        
+            <!-- Your existing submit button -->
 
+            <button type="submit" class="login-btn">Save Event</button>
+        </div>
+    </div>
+</form>
+
+    
 
 
     <!-- Footer -->
@@ -246,7 +229,7 @@
                     Copyright &copy; 2024 CollinsJ
                 </div>
                 <div class="col-sm-6 text-right">
-                    Designed by Collins Tamunosaki Jacob</a>
+                    <p>Designed by Collins Tamunosaki Jacob</p>
                 </div>
             </div>
         </div>

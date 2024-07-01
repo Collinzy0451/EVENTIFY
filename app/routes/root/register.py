@@ -1,9 +1,13 @@
 from app import app, db
 from flask import render_template, request, redirect, url_for, flash
 from app.models.user import Registration
+from app.models.admin import Event
 
 @app.route('/register', methods=['GET', 'POST'])
 def register_page():
+
+    admin_event = Event.query.first()
+
     if request.method == 'POST':
         # Get the form data
         form_data = request.form
@@ -17,11 +21,12 @@ def register_page():
             num_of_ticket=form_data.get('number_of_tickets'),
             contact_no=form_data.get('contact_no'),
             country_of_residence=form_data.get('country_of_residence'),
-            event_name=form_data.get('event_name'),
-            event_venue=form_data.get('event_venue'),
-            eligibility=form_data.get('eligibility'),
-            event_date=form_data.get('event_date')
+            event_name=admin_event.event_name,
+            event_venue=admin_event.event_venue,
+            eligibility=admin_event.eligibility,
+            event_date=admin_event.event_date
         )
+
         db.session.add(registration)
         db.session.commit()
 
@@ -30,7 +35,7 @@ def register_page():
         # Redirect to the page of displaying the user inputs
         return redirect(url_for('user_inputs'))
 
-    return render_template("root/register.html")
+    return render_template('root/register.html', admin_event=admin_event)
 
 @app.route('/user_inputs')
 def user_inputs():

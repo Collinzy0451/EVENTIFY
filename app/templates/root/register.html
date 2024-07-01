@@ -3,20 +3,625 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register To Get Your Free Tickets Today</title>
-    <link rel="stylesheet" href="../../static/root/css/register.css">
+    <title>Register for an event</title>
+    <link rel="stylesheet" href="../../static/root/css/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">  
+    <link href="../../static/admin/images/evv.png" rel="icon">
+    <link href="../../static/admin/images/evv.png" rel="apple-touch-icon">
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="../../static/root/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../static/root/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="../../static/root/vendor/aos/aos.css" rel="stylesheet">
+    <link href="../../static/root/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="../../static/root/vendor/swiper/swiper-bundle.min.css" rel="stylesheet"> 
+  
 </head>
-<body>
-        <div class="container-fluid">
+<body class="index-page">
+
+    <header id="header" class="header d-flex align-items-center fixed-top">
+        <div class="container-fluid container-xl position-relative d-flex align-items-center">
+    
+          <a href="{{url_for ('home') }}" class="logo d-flex align-items-center me-auto">
+            <img src="../../static/admin/images/ee cpy.png" alt="">
+            <!-- <h1 class="sitename">TheEvent</h1>  -->
+          </a>
+    
+          <nav id="navmenu" class="navmenu">
+            <ul>
+              <li><a href="{{url_for ('register_page') }}" class="active">Event<br></a></li>
+              <li><a href="#schedule">Schedule</a></li>
+              <li><a href="#venue">Venue</a></li>
+              <li><a href="#hotels">Hotels</a></li>
+              <li><a href="#gallery">Gallery</a></li>
+              <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                <ul>
+                  <li><a href="#">Dropdown 1</a></li>
+                  <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                    <ul>
+                      <li><a href="#">Deep Dropdown 1</a></li>
+                      <li><a href="#">Deep Dropdown 2</a></li>
+                      <li><a href="#">Deep Dropdown 3</a></li>
+                      <li><a href="#">Deep Dropdown 4</a></li>
+                      <li><a href="#">Deep Dropdown 5</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="#">Dropdown 2</a></li>
+                  <li><a href="#">Dropdown 3</a></li>
+                  <li><a href="#">Dropdown 4</a></li>
+                </ul>
+              </li>
+            </ul>
+            <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+          </nav>
+    
+          <a class="cta-btn d-none d-sm-block" href="#container-fluid"> Register for an Event</a>
+    
+        </div>
+      </header>
+    
+      <main class="main">
+    
+        <!-- Hero Section -->
+        <section id="hero" class="hero section">
+    
+          <img src="../../static/root/img/hero-bg.jpg" alt="" data-aos="fade-in" class="">
+    
+          <div class="container d-flex flex-column align-items-center text-center mt-auto">
+            <h2 data-aos="fade-up" data-aos-delay="100" class="">THE PORT-HARCOURT<br><span>PEACE FESTIVAL</span></h2>
+            <p data-aos="fade-up" data-aos-delay="200">28 December. Liberation Stadium, Port-Harcourt. Rivers State.</p>
+            <div data-aos="fade-up" data-aos-delay="300" class="">
+              <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="glightbox play-btn"></a>
+            </div>
+          </div>
+    
+          <div class="about-info mt-auto position-relative">
+    
+            <div class="container position-relative" data-aos="fade-up">
+              <div class="row">
+                <div class="col-lg-6">
+                  <h2>About The Event</h2>
+                  <p>The Port-Harcourt peace an unity funfair is an annual concert hosted to promote peace and oneness among the diverse people of Rivers State. it involves, sport competitionswith quality prices to be won, talkshows, Pageantry, Awards, Red Carpet and night show featuring top celebrities across Africa. it is indeed a concert not to be missed.</p>
+                </div>
+                <div class="col-lg-3">
+                  <h3>Where</h3>
+                  <p>Liberation Stadium, Elekahia, Port Harcourt.</p>
+                </div>
+                <div class="col-lg-3">
+                  <h3>When</h3>
+                  <p>Saturday<br>28 December, 2024.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+    
+        </section><!-- /Hero Section -->
+    
+        <!-- Guests Section -->
+        <section id="speakers" class="speakers section">
+    
+          <!-- Section Title -->
+          <div class="container section-title" data-aos="fade-up">
+            <h2>Event Hosts<br></h2>
+    
+          </div><!-- End Section Title -->
+    
+          <div class="container">
+    
+            <div class="row gy-4">
+    
+              <div class="col-xl-3 col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="member">
+                  <img src="../../static/root/img/speakers/speaker-1.jpg" class="img-fluid" alt="">
+                  <div class="member-info">
+                    <div class="member-info-content">
+                      <h4><a href="speaker-details.html">Dr Sim Fubara</a></h4>
+                      <span>Executive Governor or Rivers State</span>
+                    </div>
+                    <div class="social">
+                      <a href=""><i class="bi bi-twitter-x"></i></a>
+                      <a href=""><i class="bi bi-facebook"></i></a>
+                      <a href=""><i class="bi bi-instagram"></i></a>
+                      <a href=""><i class="bi bi-linkedin"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div><!-- End Team Member -->
+    
+              <div class="col-xl-3 col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="member">
+                  <img src="../../static/root/img/speakers/speaker-2.jpg" class="img-fluid" alt="">
+                  <div class="member-info">
+                    <div class="member-info-content">
+                      <h4><a href="speaker-details.html">Tonye Princewill</a></h4>
+                      <span>Speaker House of Assembly</span>
+                    </div>
+                    <div class="social">
+                      <a href=""><i class="bi bi-twitter-x"></i></a>
+                      <a href=""><i class="bi bi-facebook"></i></a>
+                      <a href=""><i class="bi bi-instagram"></i></a>
+                      <a href=""><i class="bi bi-linkedin"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div><!-- End Team Member -->
+    
+              <div class="col-xl-3 col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                <div class="member">
+                  <img src="../../static/root/img/speakers/speaker-3.jpg" class="img-fluid" alt="">
+                  <div class="member-info">
+                    <div class="member-info-content">
+                      <h4><a href="speaker-details.html">Trevo Noah</a></h4>
+                      <span>Comedian</span>
+                    </div>
+                    <div class="social">
+                      <a href=""><i class="bi bi-twitter-x"></i></a>
+                      <a href=""><i class="bi bi-facebook"></i></a>
+                      <a href=""><i class="bi bi-instagram"></i></a>
+                      <a href=""><i class="bi bi-linkedin"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div><!-- End Team Member -->
+    
+              <div class="col-xl-3 col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                <div class="member">
+                  <img src="../../static/root/img/speakers/speaker-4.jpg" class="img-fluid" alt="">
+                  <div class="member-info">
+                    <div class="member-info-content">
+                      <h4><a href="speaker-details.html">Tems</a></h4>
+                      <span>Singer</span>
+                    </div>
+                    <div class="social">
+                      <a href=""><i class="bi bi-twitter-x"></i></a>
+                      <a href=""><i class="bi bi-facebook"></i></a>
+                      <a href=""><i class="bi bi-instagram"></i></a>
+                      <a href=""><i class="bi bi-linkedin"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div><!-- End Team Member -->
+    
+            </div>
+    
+          </div>
+    
+        </section><!-- /Guests Section -->
+
+          <!-- Schedule Section -->
+   
+          <section id="schedule" class="schedule section">
+
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+          <h2>Performing Artists<br></h2>
+          <p>The list of Artists Performing for the show.</p>
+        </div><!-- End Section Title -->
+  
+        <div class="container">
+  
+          <ul class="nav nav-tabs" role="tablist" data-aos="fade-up" data-aos-delay="100">
+            <li class="nav-item">
+              <a class="nav-link active" href="#day-1" role="tab" data-bs-toggle="tab">Day 1</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#day-2" role="tab" data-bs-toggle="tab">Day 2</a>
+            </li>
+            <!-- <li class="nav-item">
+              <a class="nav-link" href="#day-3" role="tab" data-bs-toggle="tab">Day 3</a>
+            </li> -->
+          </ul>
+  
+          <div class="tab-content row justify-content-center" data-aos="fade-up" data-aos-delay="200">
+  
+            <h3 class="sub-heading">A highly Anticipated  Entertainment-filled Concert featuring Music, Dance, Comedy, Games and lots more.</h3>
+  
+            <!-- Schdule Day 1 -->
+            <div role="tabpanel" class="col-lg-9 tab-pane fade show active" id="day-1">
+  
+              <div class="row schedule-item">
+                <div class="col-md-2"><time></time></div>
+                <div class="col-md-10">
+                  <h4>Davido</h4><span>Nigeria</span>
+                  <p>Musician</p>
+                </div>
+              </div>
+  
+              <div class="row schedule-item">
+                <div class="col-md-2"><time></time></div>
+                <div class="col-md-10">
+                  <div class="speaker">
+                    <img src="../../static/root/img/speakers/speaker-1-2.jpg" alt="">
+                  </div>
+                  <h4>Ayra Star<span>Nigeria</span></h4>
+                  <p>Musician</p>
+                </div>
+              </div>
+  
+              <div class="row schedule-item">
+                <div class="col-md-2"><time>4pm</time></div>
+                <div class="col-md-10">
+                  <div class="speaker">
+                    <img src="../../static/root/img/speakers/speaker-2-2.jpg" alt="">
+                  </div>
+                  <h4>Rema<span>Nigeria</span></h4>
+                  <p>Musician</p>
+                </div>
+              </div>
+  
+              <div class="row schedule-item">
+                <div class="col-md-2"><time>7pm</time></div>
+                <div class="col-md-10">
+                  <div class="speaker">
+                    <img src="../../static/root/img/speakers/speaker-3-2.jpg" alt="">
+                  </div>
+                  <h4>Sarkodie<span>Ghana</span></h4>
+                  <p>Rapper</p>
+                </div>
+              </div>
+  
+              <div class="row schedule-item">
+                <div class="col-md-2"><time>9pm</time></div>
+                <div class="col-md-10">
+                  <div class="speaker">
+                    <img src="../../static/root/img/speakers/speaker-4-2.jpg" alt="">
+                  </div>
+                  <h4>Tems<span>Nigeria</span></h4>
+                  <p>Singer</p>
+                </div>
+              </div>
+  
+              <div class="row schedule-item">
+                <div class="col-md-2"><time>11pm</time></div>
+                <div class="col-md-10">
+                  <div class="speaker">
+                    <img src="../../static/root/img/speakers/speaker-5.jpg" alt="">
+                  </div>
+                  <h4>Trevo Noah<span>South Africa</span></h4>
+                  <p>Comedian</p>
+                </div>
+              </div>
+  
+           
+  
+            </div><!-- End Schdule Day 1 -->
+  
+            <!-- Schdule Day 2 -->
+            <div role="tabpanel" class="col-lg-9  tab-pane fade" id="day-2">
+  
+              <div class="row schedule-item">
+                <div class="col-md-2"><time></time></div>
+                <div class="col-md-10">
+                  <div class="speaker">
+                    <img src="../../static/root/img/speakers/speaker-1-2.jpg" alt="">
+                  </div>
+                  <h4>Burnaboy<span>Nigeria</span></h4>
+                  <p>Musician</p>
+                </div>
+              </div>
+  
+              <div class="row schedule-item">
+                <div class="col-md-2"><time></time></div>
+                <div class="col-md-10">
+                  <div class="speaker">
+                    <img src="../../static/root/img/speaker-2-2.jpg" alt="">
+                  </div>
+                  <h4>Tems<span>Nigeria</span></h4>
+                  <p>Singer</p>
+                </div>
+              </div>
+  
+              <div class="row schedule-item">
+                <div class="col-md-2"><time></time></div>
+                <div class="col-md-10">
+                  <div class="speaker">
+                    <img src="../../static/root/img/speaker-3-2.jpg" alt="">
+                  </div>
+                  <h4>Basketmouth<span>Nigeria</span></h4>
+                  <p>Comedian</p>
+                </div>
+              </div>
+  
+              <div class="row schedule-item">
+                <div class="col-md-2"><time></time></div>
+                <div class="col-md-10">
+                  <div class="speaker">
+                    <img src="../../static/root/imgspeakers/speaker-4-2.jpg" alt="">
+                  </div>
+                  <h4>Nasty C<span>South Africa</span></h4>
+                  <p>Rapper</p>
+                </div>
+              </div>
+  
+              <div class="row schedule-item">
+                <div class="col-md-2"><time></time></div>
+                <div class="col-md-10">
+                  <div class="speaker">
+                    <img src="../../static/root/img/speakers/speaker-5.jpg" alt="">
+                  </div>
+                  <h4>Micheal Blackson<span>US</span></h4>
+                  <p>Actor &  Comedian</p>
+                </div>
+              </div>
+  
+              <div class="row schedule-item">
+                <div class="col-md-2"><time></time></div>
+                <div class="col-md-10">
+                  <div class="speaker">
+                    <img src="../../static/root/img/speakers/speaker-6.jpg" alt="Willow Trantow">
+                  </div>
+                  <h4>Tyla<span>South Africa</span></h4>
+                  <p>Singer</p>
+                </div>
+              </div>
+  
+            </div><!-- End Schdule Day 2 -->
+  
+      </section><!-- /Schedule Section -->
+
+       <!-- Venue Section -->
+    <section id="venue" class="venue section">
+
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+          <h2>Event Venue<br></h2>
+          <p></p>
+        </div><!-- End Section Title -->
+  
+        <div class="container-fluid" data-aos="fade-up">
+  
+          <div class="row g-0">
+            <div class="col-lg-6 venue-map">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0" style="border:0" allowfullscreen=""></iframe>
+            </div>
+  
+            <div class="col-lg-6 venue-info">
+              <div class="row justify-content-center">
+                <div class="col-11 col-lg-8 position-relative">
+                  <h3>Liberation Stadium, Port Harcour</h3>
+                  <p>The Concert will hold at the Liberation Stadium, Elekahia Port, Harcourt, Rivers Sate, Nigeria.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+        </div>
+  
+        <div class="container-fluid venue-gallery-container" data-aos="fade-up" data-aos-delay="100">
+          <div class="row g-0">
+  
+            <div class="col-lg-3 col-md-4">
+              <div class="venue-gallery">
+                <a href="../../static/root/img/venue-gallery/venue-gallery-1.jpg" class="glightbox" data-gall="venue-gallery">
+                  <img src="../../static/root/img/venue-gallery/venue-gallery-1.jpg" alt="" class="img-fluid">
+                </a>
+              </div>
+            </div>
+  
+            <div class="col-lg-3 col-md-4">
+              <div class="venue-gallery">
+                <a href="../../static/root/img/venue-gallery/venue-gallery-2.jpg" class="glightbox" data-gall="venue-gallery">
+                  <img src="../../static/root/img/venue-gallery/venue-gallery-2.jpg" alt="" class="img-fluid">
+                </a>
+              </div>
+            </div>
+  
+            <div class="col-lg-3 col-md-4">
+              <div class="venue-gallery">
+                <a href="../../static/root/img/venue-gallery/venue-gallery-3.jpg" class="glightbox" data-gall="venue-gallery">
+                  <img src="../../static/root/img/venue-gallery/venue-gallery-3.jpg" alt="" class="img-fluid">
+                </a>
+              </div>
+            </div>
+  
+            <div class="col-lg-3 col-md-4">
+              <div class="venue-gallery">
+                <a href="../../static/root/img/venue-gallery/venue-gallery-4.jpg" class="glightbox" data-gall="venue-gallery">
+                  <img src="../../static/root/img/venue-gallery/venue-gallery-4.jpg" alt="" class="img-fluid">
+                </a>
+              </div>
+            </div>
+  
+            <div class="col-lg-3 col-md-4">
+              <div class="venue-gallery">
+                <a href="../../static/root/img/venue-gallery/venue-gallery-5.jpg" class="glightbox" data-gall="venue-gallery">
+                  <img src="../../static/root/img/venue-gallery/venue-gallery-5.jpg" alt="" class="img-fluid">
+                </a>
+              </div>
+            </div>
+  
+            <div class="col-lg-3 col-md-4">
+              <div class="venue-gallery">
+                <a href="../../static/root/img/venue-gallery/venue-gallery-6.jpg" class="glightbox" data-gall="venue-gallery">
+                  <img src="../../static/root/img/venue-gallery/venue-gallery-6.jpg" alt="" class="img-fluid">
+                </a>
+              </div>
+            </div>
+  
+         
+  
+          </div>
+        </div>
+  
+      </section><!-- /Venue Section -->
+  
+      <!-- Hotels Section -->
+      <section id="hotels" class="hotels section">
+  
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+          <h2>Hotels</h2>
+          <p>These are a list of Hotels close to the Event venue, for Hasle-free booking and accomodation constraints.</p>
+        </div><!-- End Section Title -->
+  
+        <div class="container">
+  
+          <div class="row gy-4">
+  
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+              <div class="card h-100">
+                <div class="card-img">
+                  <img src="/app/static/root/img/hotels-1.jpg" alt="" class="img-fluid">
+                </div>
+                <h3><a href="#" class="stretched-link">Presidential Hotel</a></h3>
+                <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+                <p>0.4 Mile from the Venue</p>
+              </div>
+            </div><!-- End Card Item -->
+  
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+              <div class="card h-100">
+                <div class="card-img">
+                  <img src="/app/static/root/img/hotels-2.jpg" alt="" class="img-fluid">
+                </div>
+                <h3><a href="#" class="stretched-link">Liverpool Hotels</a></h3>
+                <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+                <p>0.5 Mile from the Venue</p>
+              </div>
+            </div><!-- End Card Item -->
+  
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+              <div class="card h-100">
+                <div class="card-img">
+                  <img src="/app/static/root/img/hotels-3.jpg" alt="" class="img-fluid">
+                </div>
+                <h3><a href="#" class="stretched-link">City Crowns Hotel</a></h3>
+                <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+                <p>0.6 Mile from the Venue</p>
+              </div>
+            </div><!-- End Card Item -->
+  
+          </div>
+  
+        </div>
+  
+      </section><!-- /Hotels Section -->
+
+
+         <!-- Sponsors Section -->
+         <section id="sponsors" class="sponsors section">
+  
+          <!-- Section Title -->
+          <div class="container section-title" data-aos="fade-up">
+            <h2>Sponsors</h2>
+            <p>Here are Sponsors for the event.</p>
+          </div><!-- End Section Title -->
+    
+          <div class="container" data-aos="fade-up" data-aos-delay="100">
+    
+            <div class="row g-0 clients-wrap">
+    
+              <div class="col-xl-3 col-md-4 client-logo">
+                <img src="/app/static/root/img/clients/client-1.png" class="img-fluid" alt="">
+              </div><!-- End Client Item -->
+    
+              <div class="col-xl-3 col-md-4 client-logo">
+                <img src="/app/static/root/img/clients/client-2.png" class="img-fluid" alt="">
+              </div><!-- End Client Item -->
+    
+              <div class="col-xl-3 col-md-4 client-logo">
+                <img src="/app/static/root/img/clients/client-3.png" class="img-fluid" alt="">
+              </div><!-- End Client Item -->
+    
+              <div class="col-xl-3 col-md-4 client-logo">
+                <img src="/app/static/root/img/clients/client-4.png" class="img-fluid" alt="">
+              </div><!-- End Client Item -->
+    
+              <div class="col-xl-3 col-md-4 client-logo">
+                <img src="/app/static/root/img/clients/client-5.png" class="img-fluid" alt="">
+              </div><!-- End Client Item -->
+<!--     
+              <div class="col-xl-3 col-md-4 client-logo">
+                <!- <img src="/app/static/root/img/clients/client-6.png" class="img-fluid" alt="">
+              </div> End Client Item -->
+    
+              <!-- <div class="col-xl-3 col-md-4 client-logo">
+                <img src="" class="img-fluid" alt="">
+              </div><!- End Client Item -->
+    
+              <!-- <div class="col-xl-3 col-md-4 client-logo">
+                <img src="" class="img-fluid" alt="">
+              </div>End Client Item --> 
+     
+            </div> 
+    
+          </div>
+    
+        </section><!-- /Sponsors Section -->
+
+      
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery section">
+
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+          <h2>Gallery</h2>
+          <p>Check out photos from our Previous Events</p>
+        </div><!-- End Section Title -->
+  
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+  
+          <div class="swiper init-swiper">
+            <script type="application/json" class="swiper-config">
+              {
+                "loop": true,
+                "speed": 600,
+                "autoplay": {
+                  "delay": 5000
+                },
+                "slidesPerView": "auto",
+                "centeredSlides": true,
+                "pagination": {
+                  "el": ".swiper-pagination",
+                  "type": "bullets",
+                  "clickable": true
+                },
+                "breakpoints": {
+                  "320": {
+                    "slidesPerView": 1,
+                    "spaceBetween": 0
+                  },
+                  "768": {
+                    "slidesPerView": 3,
+                    "spaceBetween": 20
+                  },
+                  "1200": {
+                    "slidesPerView": 5,
+                    "spaceBetween": 20
+                  }
+                }
+              }
+            </script>
+            <div class="swiper-wrapper align-items-center">
+              <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="/app/static/root/img/event-gallery/event-gallery-1.jpg"><img src="assets/img/event-gallery/event-gallery-1.jpg" class="img-fluid" alt=""></a></div>
+              <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="/app/static/root/img/event-gallery/event-gallery-2.jpg"><img src="assets/img/event-gallery/event-gallery-2.jpg" class="img-fluid" alt=""></a></div>
+              <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="/app/static/root/img/event-gallery/event-gallery-3.jpg"><img src="assets/img/event-gallery/event-gallery-3.jpg" class="img-fluid" alt=""></a></div>
+              <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="/app/static/root/img/event-gallery/event-gallery-4.jpg"><img src="assets/img/event-gallery/event-gallery-4.jpg" class="img-fluid" alt=""></a></div>
+              <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="/app/static/root/img/event-gallery/event-gallery-5.jpg"><img src="assets/img/event-gallery/event-gallery-5.jpg" class="img-fluid" alt=""></a></div>
+              <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="/app/static/root/img/event-gallery/event-gallery-6.jpg"><img src="assets/img/event-gallery/event-gallery-6.jpg" class="img-fluid" alt=""></a></div>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+  
+        </div>
+  
+      </section><!-- /Gallery Section -->
+  
+   
+  
+
+    <div class="container-fluid" id="container-fluid">
         <div class="row justify-content-center">
             <div class="col-11 col-sm-10 col-md-10 col-lg-6 col-xl-5 text-center p-0 mt-3 mb-2">
                 <div class="card px-0 pt-4 pb-0 mt-3 mb-3">
-                    <h2 id="heading">Get Registered For The Anual Developers Conference</h2>
+                    <h2 id="heading">Register to get your tickets for the PORT-HARCOURT PEACE FESTIVAL</h2>
                     <p>Fill all form field to go to next step</p>
 
+
                     <form id="msform" method="post" action="{{ url_for('register_page') }}">
+                        <!-- progressbar -->
                         <ul id="progressbar">
                             <li class="active" id="account"><strong>Account</strong></li>
                             <li id="personal"><strong>Personal</strong></li>
@@ -27,7 +632,7 @@
                             <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
                         </div> <br> <!-- fieldsets -->
                        
-                         <fieldset>
+                        <fieldset>
                             <div class="form-card">
                                 <div class="row">
                                     <div class="col-7">
@@ -38,16 +643,16 @@
                                     </div>
                                 </div>  
                                 <label class="fieldlabels">Event Name:</label> 
-                                <input type="text" name="event_name" placeholder="Event Name" />
+                                <input type="text" name="event_name" placeholder="Event Name" required value="{{ admin_event.event_name  }}" readonly/>
 
                                  <label class="fieldlabels">Event Venue:</label>
-                                  <input type="text" name="event_venue" placeholder="Venue" />
+                                  <input type="text" name="event_venue" placeholder="Venue" required value="{{ admin_event.event_venue  }}" readonly />
 
                                   <label class="fieldlabels">Eligibility:</label> 
-                                  <input type="text" name="eligibility" placeholder="Eligibility" />
+                                  <input type="text" name="eligibility" placeholder="Eligibility" required value="{{ admin_event.eligibility }}" readonly  />
 
                                   <label class="fieldlabels">Event Date:</label>
-                                   <input type="date" name="event_date" placeholder="Event Date" />
+                                   <input type="date" name="event_date" placeholder="Event Date"  required value="{{ admin_event.event_date.strftime('%Y-%m-%d')  }}" readonly />
 
                             </div> <input type="button" name="next" class="next action-button" value="Next" />
                         </fieldset>
@@ -102,17 +707,13 @@
                                 <select id="payment_method" name="ticket_type" required>
                                     <option disabled selected>Select an option</option>
                                     <option value="regular">Regular Tickets</option>
-                                    <option value="speaker_vip">Speaker/VIP Tickets</option>
+                                    <option value="speaker_vip">VIP Tickets</option>
                                 </select>
 
                                 <label   class="fieldlabels"  for="number_of_tickets">Number Of Ticket:</label>
                                 <select id="payment_method" name="number_of_tickets" required>
                                     <option disabled selected>Select an option</option>
                                     <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
                                 </select> 
 
                             </div> 
@@ -133,7 +734,7 @@
                                 </div> <br><br>
                                 <h2 class="purple-text text-center"><strong>SUCCESS !</strong></h2> <br>
                                 <div class="row justify-content-center">
-                                    <div class="col-3"> <img src="../../static/root/img/good.jpg" class="fit-image"> </div>
+                                    <div class="col-3"> <img src="../../static/admin/images/success.jpeg" class="fit-image"> </div>
                                 </div> <br><br>
                                 <div class="row justify-content-center">
                                     <div class="col-7 text-center">
@@ -145,6 +746,7 @@
                     </form>
 
 
+
                 </div>
             </div>
         </div>
@@ -152,5 +754,23 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="../../static/root/js/register.js"></script>
+
+     <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="../../static/root/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../../static/root/vendor/php-email-form/validate.js"></script>
+  <script src="../../static/root/vendor/aos/aos.js"></script>
+  <script src="../../static/root/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="../../static/root/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="../../static/root/js/main.js"></script>
+
 </body>
+
 </html>

@@ -15,7 +15,7 @@
   
   .login-form-bd {
 
-    color: #fff;
+    color: #ec0707;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -37,26 +37,26 @@
     text-align: center;
     margin-bottom: 2.75rem;
     margin-top: -1.875rem;
-    color: #ffff;
+    color: #e60303;
     font-weight: normal;
     font-size: 2rem;
   }
   
   .form-container a {
     text-decoration: none;
-    color: #e2dc20;
+    color: #e60303;
   }
   
   .login-btn {
     cursor: pointer;
     display: inline-block;
     width: 100%;
-    background: #e2dc20;
+    background: #e60303;
     padding: 0.938rem;
     font-family: inherit;
     font-weight: 500;
     font-size: 1.563rem;
-    color: #0d0f42;
+    color: #fff;
     border: 0;
     border-radius: 0.313rem;
     margin-bottom: 1.25rem;

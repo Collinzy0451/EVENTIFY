@@ -8,12 +8,39 @@ html {
 }
 
 p {
-    color: grey
+    color: rgb(3, 3, 3)
 }
+
+body {
+    color: var(--default-color);
+    background-color: var(--background-color);
+    font-family: var(--default-font);
+  }
+  
+  a {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: 0.3s;
+  }
+  
+  a:hover {
+    color: color-mix(in srgb, var(--accent-color), transparent 25%);
+    text-decoration: none;
+  }
+  
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: var(--heading-color);
+    font-family: var(--heading-font);
+  }
 
 #heading {
     text-transform: uppercase;
-    color: #673AB7;
+    color: #f30808;
     font-weight: normal
 }
 
@@ -45,15 +72,15 @@ p {
 #msform input,
 #msform textarea, select {
     padding: 8px 15px 8px 15px;
-    border: 1px solid #ccc;
+    border: 1px solid #ee0a0a;
     border-radius: 0px;
     margin-bottom: 25px;
     margin-top: 2px;
     width: 100%;
     box-sizing: border-box;
     font-family: montserrat;
-    color: #2C3E50;
-    background-color: #ECEFF1;
+    color: #fa0a1e;
+    background-color:#616161;
     font-size: 16px;
     letter-spacing: 1px
 }
@@ -63,15 +90,15 @@ p {
     -moz-box-shadow: none !important;
     -webkit-box-shadow: none !important;
     box-shadow: none !important;
-    border: 1px solid #673AB7;
+    border: 1px solid red;
     outline-width: 0
 }
 
 #msform .action-button {
     width: 100px;
-    background: #673AB7;
+    background: yellow;
     font-weight: bold;
-    color: white;
+    color: red;
     border: 0 none;
     border-radius: 0px;
     cursor: pointer;
@@ -82,7 +109,7 @@ p {
 
 #msform .action-button:hover,
 #msform .action-button:focus {
-    background-color: #311B92
+    background-color: #921b1b
 }
 
 #msform .action-button-previous {
@@ -111,14 +138,14 @@ p {
 
 .fs-title {
     font-size: 25px;
-    color: #673AB7;
+    color: red;
     margin-bottom: 15px;
     font-weight: normal;
     text-align: left
 }
 
 .purple-text {
-    color: #673AB7;
+    color: red;
     font-weight: normal
 }
 
@@ -142,7 +169,7 @@ p {
 }
 
 #progressbar .active {
-    color: #673AB7
+    color: #f10b0b
 }
 
 #progressbar li {
@@ -200,7 +227,7 @@ p {
 
 #progressbar li.active:before,
 #progressbar li.active:after {
-    background: #673AB7
+    background: #fa0a1e
 }
 
 .progress {
@@ -208,7 +235,7 @@ p {
 }
 
 .progress-bar {
-    background-color: #673AB7
+    background-color: #fa0a1e
 }
 
 .fit-image {
